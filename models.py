@@ -39,9 +39,14 @@ class PerceptronModel(Module):
 
         Hint: You can use ones(dim) to create a tensor of dimension dim.
         """
+        #Code Inspo Source 
+        #https://inst.eecs.berkeley.edu/~cs188/textbook/ml/binary.html
+        #https://www.geeksforgeeks.org/machine-learning/what-is-perceptron-the-simplest-artificial-neural-network/
+        #https://stackoverflow.com/questions/41870228/understanding-tensordot
         super(PerceptronModel, self).__init__()
 
         "*** YOUR CODE HERE ***"
+        self.w = Parameter(ones(1, dimensions))
 
 
     def get_weights(self):
@@ -61,6 +66,8 @@ class PerceptronModel(Module):
         The pytorch function `tensordot` may be helpful here.
         """
         "*** YOUR CODE HERE ***"
+        # Returning tensordot with the weight, node, and dimension
+        return tensordot(self.w[0], x[0], dims = 1).reshape(1)
 
         
 
@@ -70,11 +77,12 @@ class PerceptronModel(Module):
 
         Returns: 1 or -1
         """
-        score = self(x)
-
-        "*** YOUR CODE HERE ***"
-
-
+        #score = self(x)
+        dotproduct_score = self.forward(x)
+        if dotproduct_score  >= 0:
+            return 1
+        else: 
+            return -1 
 
 class RegressionModel(Module):
     """
@@ -122,6 +130,11 @@ class DigitClassificationModel(Module):
         input_size = 28 * 28
         output_size = 10
         "*** YOUR CODE HERE ***"
+        #First we need to make layers for our network 
+        self.layer1 = Linear(784, 256)    
+        self.layer2 = Linear(256, 128)    
+        self.layer3 = Linear(128, 10)     
+
 
 
     def forward(self, x):
@@ -139,6 +152,13 @@ class DigitClassificationModel(Module):
                 (also called logits)
         """
         """ YOUR CODE HERE """
+        #Iterate through all batch examples through the layers using relu 
+        x = self.layer1(x) 
+        x = relu(x)
+        x = self.layer2(x)
+        x = relu(x)
+        x = self.layer3(x)
+        return x
 
 
 
