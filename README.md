@@ -13,10 +13,10 @@ Running
 
 Install dependencies:
 
-  --> pip install numpy matplotlib torch
+  pip install numpy matplotlib torch
 
 Run specific components using:
 
-  --> python autograder.py -q q3
+  python autograder.py -q q3
 
 Or train models directly through the training scripts.
