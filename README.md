@@ -1,4 +1,4 @@
-Series of Machine Learning Neural Network Models in Pytorch (Deep Learning) 
+Machine Learning : Series of Neural Network Models in Pytorch (Deep Learning) 
 
 Files Edited include: models.py, train.py, losses.py 
 
