@@ -7,16 +7,3 @@ Files Edited include: models.py, train.py, losses.py
 3. Handwritten Digit Classification
 4. Language Identification (RNNs)
 5. Handwritten Digit Classification with Convulational Neural Networks (CNNs)
-
-
-Running 
-
-Install dependencies:
-
-  pip install numpy matplotlib torch
-
-Run specific components using:
-
-  python autograder.py -q q3
-
-Or train models directly through the training scripts.
