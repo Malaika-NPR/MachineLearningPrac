@@ -1,4 +1,4 @@
-Machine Learning Practice (Deep Learning) 
+Machine Learning Problems (Deep Learning) 
 
 Files Edited include: models.py, train.py, losses.py 
 
